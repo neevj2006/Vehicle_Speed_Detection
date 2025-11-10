@@ -93,20 +93,15 @@ The Colab implementation is structured into three main stages:
 
 The pixel-to-meter ratio varies with depth in the scene:
 
+$$
+\text{meters\_per\_pixel}(y) = m_{\text{far}} + (m_{\text{near}} - m_{\text{far}}) \times \frac{y}{H}
+$$
+
+$$
+v_{\text{km/h}} = \text{distance}_{\text{pixels}} \times \text{meters\_per\_pixel} \times FPS \times 3.6
+$$
 \[
 \text{meters*per_pixel}(y) = m*{far} + (m*{near} - m*{far}) \times \frac{y}{H}
-\]
-
-where
-
-- \( y \): vertical pixel coordinate
-- \( H \): frame height
-- \( m*{far}, m*{near} \): conversion factors for far and near regions
-
-Speed is then computed as:
-
-\[
-v*{km/h} = \text{distance}*{pixels} \times \text{meters_per_pixel} \times FPS \times 3.6
 \]
 
 ---
