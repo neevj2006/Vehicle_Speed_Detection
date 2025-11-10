@@ -91,11 +91,10 @@ The Colab implementation is structured into three main stages:
 
 ## Speed Estimation Model
 
-The pixel-to-meter ratio varies with depth in the scene:
-
-$`\text{meters\_per\_pixel}(y) = m_{\text{far}} + (m_{\text{near}} - m_{\text{far}}) \times \frac{y}{H}`$
-
-$`v_{\text{km/h}} = \text{distance}_{\text{pixels}} \times \text{meters\_per\_pixel} \times FPS \times 3.6`$
+where  
+- **y** = vertical pixel coordinate  
+- **H** = frame height  
+- **$`m_{\text{far}}`$**, **$`m_{\text{near}}`$** = conversion factors for far and near regions
 
 ---
 
